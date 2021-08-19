@@ -44,3 +44,8 @@ class BasePage():
             counter-=1
         raise Exception("Timeout! Page taking long time to load")
 
+    def get_h2_section_headers(self):
+            return [ele.text for ele in self.driver.find_elements_by_xpath('//h2') ]
+
+    def get_h3_section_headers(self):
+            return [ele.text for ele in self.driver.find_elements_by_xpath('//h3') ]
