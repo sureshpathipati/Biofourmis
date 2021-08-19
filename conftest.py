@@ -10,7 +10,8 @@ def setUp(request):
 	driver.implicitly_wait(DEFAULT_TIMEOUT)
 	driver.set_page_load_timeout(20)
 	bfs = BioFourmisPage(driver)
-	return bfs
+	yield bfs
+	driver.quit()
 
 def take_screenshot(request):
 	driver.save_screenshot(request.node.name)
