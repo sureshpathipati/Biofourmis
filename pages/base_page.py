@@ -14,7 +14,7 @@ class BasePage():
     def __init__(self, driver):
         self.driver = driver
 
-        def navigate_to_url(self, url):
+    def navigate_to_url(self, url):
         """
         To navigate to respective url passed
         """
@@ -44,10 +44,3 @@ class BasePage():
             counter-=1
         raise Exception("Timeout! Page taking long time to load")
 
-
-
-
-
-
-
-        
