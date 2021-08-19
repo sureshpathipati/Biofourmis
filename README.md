@@ -12,6 +12,10 @@ This automation framework is build on pytest.
 * Python    - 3.9
 
 
+## Application under test
+* Web: BioFourmis
+* API: https://deckofcardsapi.com/
+
 ---
 ## Installation
 1. Clone the repo
@@ -64,7 +68,28 @@ This automation framework is build on pytest.
     ex: pytest bio_fourmis_test.py --html=report.html
 ```
 
-
-
-
-
+## Folder Structure
+  |
+  |-api
+  |   --end_points.py (Constants contains List of Endpoints)
+  |   --open_api_test.py (Contains Actual test Cases)
+  |
+  |-biofourmis (Virtual Env)
+  |
+  |-config (Any configuration related files exits here)
+  |   --browser_setup.py (Initialize chrome browser as if now)
+  |
+  |-pages()
+  |   --bio_fourmis_page.py (Contains all page objects as functions)
+  |   --base_page.py (Contains common functions across all pages and act as parent class for all the plaform specific pages)
+  |   --<platfrom_specific>_page.py
+  |
+  |
+  |-bio_fourmis_test.py (Contains actual UI Test Cases)
+  |
+  |-conftest.py (File specific to pytest, which gets loaded initially used for tearUp and tearDown)
+  |
+  |-requirements.txt (Contains project specific dependencies)
+  |
+  |-reports.html (Generated via inbuilt script after the execution)
+  |
